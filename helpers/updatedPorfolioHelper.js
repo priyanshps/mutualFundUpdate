@@ -7,7 +7,6 @@ import _ from "lodash";
 // Function to fetch latest NAV price
 const fetchLatestPrice = async (scheme_code) => {
   try {
-    console.log("fetchLatestPrice")
 
     const schemeString = scheme_code.join(",");
     const response = await axios.get(
@@ -29,7 +28,6 @@ const fetchLatestPrice = async (scheme_code) => {
     }
     return response.data;
   } catch (error) {
-    console.log("error", error);
     return null; // Return null on failure
   }
 };
@@ -94,7 +92,6 @@ export const updatePortfolioPrices = async (userId) => {
       }
     );
   } catch (error) {
-    console.log("error", error);
     return {
       message: `Error updating portfolio prices for userId: ${userId}`,
       error: error.message,
